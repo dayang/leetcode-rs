@@ -18,7 +18,7 @@ jobs:
         ls target/doc
     - name: Transfer File
       env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.DOC_DEPLOY_KEY }}
+        DOC_DEPLOY_KEY: ${{ secrets.DOC_DEPLOY_KEY }}
         HOST: 114.67.95.158
         USER: yonghua
         HOME_PATH: /home/yonghua
