@@ -3,7 +3,7 @@ name: Deploy Doc
 on: [push]
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-latest
 
@@ -11,5 +11,33 @@ jobs:
     - uses: actions/checkout@v1
     - name: Version
       run: cargo -V
-    - name: Run tests
-      run: cargo test --verbose
+    - name: GenDoc
+      run: cargo doc
+    - name: Look Result
+      run: |
+        ls target/doc
+    - name: Transfer File
+      env:
+        DOC_DEPLOY_KEY: ${{ secrets.DOC_DEPLOY_KEY }}
+        HOST: 114.67.95.158
+        USER: yonghua
+        HOME_PATH: /home/yonghua
+        DEPLOY_SH_PATH: /home/yonghua/deploy_github_action_doc.sh
+        PACKAGE_NAME: leetcode.tar.gz
+      run: |
+        SSH_PATH="$HOME/.ssh"
+        mkdir -p $SSH_PATH
+        touch "$SSH_PATH/known_hosts"
+        echo "$DOC_DEPLOY_KEY" > "$SSH_PATH/id_rsa"
+        cat $SSH_PATH/id_rsa
+        chmod 700 "$SSH_PATH"
+        chmod 600 "$SSH_PATH/known_hosts"
+        chmod 600 "$SSH_PATH/id_rsa"
+        eval $(ssh-agent)
+        ssh-add "$SSH_PATH/id_rsa"
+        ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
+        cd target/doc
+        tar -cf $PACKAGE_NAME *
+        scp $PACKAGE_NAME $USER@$HOST:$HOME_PATH
+        ssh -o StrictHostKeyChecking=no -i $SSH_PATH/id_rsa -A -tt $USER@$HOST sh $DEPLOY_SH_PATH
+        exit
