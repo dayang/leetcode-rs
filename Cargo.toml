@@ -1,5 +1,6 @@
 [workspace]
 members = [
     "two-sum",
-    "add-two-numbers"
+    "add-two-numbers",
+    "reverse-integer",
 ]
