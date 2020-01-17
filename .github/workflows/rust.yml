@@ -29,6 +29,7 @@ jobs:
         mkdir -p $SSH_PATH
         touch "$SSH_PATH/known_hosts"
         echo "$DOC_DEPLOY_KEY" > "$SSH_PATH/id_rsa"
+        cat $SSH_PATH/id_rsa
         chmod 700 "$SSH_PATH"
         chmod 600 "$SSH_PATH/known_hosts"
         chmod 600 "$SSH_PATH/id_rsa"
