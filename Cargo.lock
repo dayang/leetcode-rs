@@ -5,6 +5,10 @@ name = "add-two-numbers"
 version = "0.1.0"
 
 [[package]]
+name = "longest-substring-without-repeating-characters"
+version = "0.1.0"
+
+[[package]]
 name = "reverse-integer"
 version = "0.1.0"
 

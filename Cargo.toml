@@ -3,4 +3,5 @@ members = [
     "two-sum",
     "add-two-numbers",
     "reverse-integer",
+    "longest-substring-without-repeating-characters"
 ]
