@@ -4,5 +4,6 @@ members = [
     "add-two-numbers",
     "reverse-integer",
     "longest-substring-without-repeating-characters",
-    "binary-tree-inorder-traversal"
+    "binary-tree-inorder-traversal",
+    "same-tree",
 ]
