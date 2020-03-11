@@ -6,5 +6,6 @@ members = [
     "longest-substring-without-repeating-characters",
     "binary-tree-inorder-traversal",
     "same-tree",
-    "symmetric-tree"
+    "symmetric-tree",
+    "recover-binary-search-tree"
 ]
