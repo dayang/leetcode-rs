@@ -7,5 +7,6 @@ members = [
     "binary-tree-inorder-traversal",
     "same-tree",
     "symmetric-tree",
-    "recover-binary-search-tree"
+    "recover-binary-search-tree",
+    "validate-binary-search-tree"
 ]
