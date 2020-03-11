@@ -8,5 +8,6 @@ members = [
     "same-tree",
     "symmetric-tree",
     "recover-binary-search-tree",
-    "validate-binary-search-tree"
+    "validate-binary-search-tree",
+    "unique-binary-search-trees"
 ]
