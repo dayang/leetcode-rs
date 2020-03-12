@@ -9,5 +9,6 @@ members = [
     "symmetric-tree",
     "recover-binary-search-tree",
     "validate-binary-search-tree",
-    "unique-binary-search-trees"
+    "unique-binary-search-trees",
+    "how-many-numbers-are-smaller-than-the-current-number"
 ]

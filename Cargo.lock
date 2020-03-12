@@ -9,6 +9,10 @@ name = "binary-tree-inorder-traversal"
 version = "0.1.0"
 
 [[package]]
+name = "how-many-numbers-are-smaller-than-the-current-number"
+version = "0.1.0"
+
+[[package]]
 name = "longest-substring-without-repeating-characters"
 version = "0.1.0"
 
