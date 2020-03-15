@@ -25,6 +25,10 @@ name = "reverse-integer"
 version = "0.1.0"
 
 [[package]]
+name = "reverse-nodes-in-k-group"
+version = "0.1.0"
+
+[[package]]
 name = "same-tree"
 version = "0.1.0"
 
@@ -38,6 +42,10 @@ version = "0.1.0"
 
 [[package]]
 name = "unique-binary-search-trees"
+version = "0.1.0"
+
+[[package]]
+name = "valid-anagram"
 version = "0.1.0"
 
 [[package]]

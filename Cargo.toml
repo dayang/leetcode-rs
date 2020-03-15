@@ -10,5 +10,7 @@ members = [
     "recover-binary-search-tree",
     "validate-binary-search-tree",
     "unique-binary-search-trees",
-    "how-many-numbers-are-smaller-than-the-current-number"
+    "how-many-numbers-are-smaller-than-the-current-number",
+    "valid-anagram",
+    "reverse-nodes-in-k-group"
 ]
