@@ -12,5 +12,7 @@ members = [
     "unique-binary-search-trees",
     "how-many-numbers-are-smaller-than-the-current-number",
     "valid-anagram",
-    "reverse-nodes-in-k-group"
+    "reverse-nodes-in-k-group",
+    "count-negative-numbers-in-a-sorted-matrix",
+    "lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof"
 ]
