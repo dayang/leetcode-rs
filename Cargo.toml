@@ -15,7 +15,7 @@ members = [
     "reverse-nodes-in-k-group",
     "count-negative-numbers-in-a-sorted-matrix",
     "lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof",
-    "add-digits"
+    "add-digits",
     "non-decreasing-array",
     "find-pivot-index",
     "daily-temperatures"
