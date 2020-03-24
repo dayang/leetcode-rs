@@ -21,5 +21,8 @@ members = [
     "daily-temperatures",
     "divisor-game",
     "best-time-to-buy-and-sell-stock",
-    "maximum-subarray"
+    "maximum-subarray",
+    "is-subsequence",
+    "min-cost-climbing-stairs",
+    "house-robber"
 ]

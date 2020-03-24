@@ -33,7 +33,15 @@ name = "find-pivot-index"
 version = "0.1.0"
 
 [[package]]
+name = "house-robber"
+version = "0.1.0"
+
+[[package]]
 name = "how-many-numbers-are-smaller-than-the-current-number"
+version = "0.1.0"
+
+[[package]]
+name = "is-subsequence"
 version = "0.1.0"
 
 [[package]]
@@ -46,6 +54,10 @@ version = "0.1.0"
 
 [[package]]
 name = "maximum-subarray"
+version = "0.1.0"
+
+[[package]]
+name = "min-cost-climbing-stairs"
 version = "0.1.0"
 
 [[package]]
