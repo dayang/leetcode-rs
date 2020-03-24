@@ -18,5 +18,8 @@ members = [
     "add-digits",
     "non-decreasing-array",
     "find-pivot-index",
-    "daily-temperatures"
+    "daily-temperatures",
+    "divisor-game",
+    "best-time-to-buy-and-sell-stock",
+    "maximum-subarray"
 ]
