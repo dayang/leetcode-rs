@@ -40,64 +40,33 @@
 //!  */
 //! public class Solution {
 //!     public ListNode ReverseKGroup(ListNode head, int k) {
-//!         int cnt;
-//!         ListNode cursor;
-//! 
-//!         ListNode pre = null;
-//!         ListNode curr = head;
-//!         ListNode next = null;
-//! 
-//!         ListNode pEnd = head;
-//! 
-//!         bool bFirst = true;
-//! 
-//!         ListNode newHead = null;
-//! 
-//!         while (true){ 
-//!             cnt = k;
-//!             // 判断是否够k个节点
-//!             cursor = curr;
-//!             while ( cursor != null && cnt-- > 0 ) {
-//!                 cursor = cursor.next;
-//!             }
-//! 
-//!             if (cnt > 0) {
-//!                 // 不足 k 个节点
-//!                 if (!bFirst){
-//!                     pEnd.next = curr;
-//!                 } else {
-//!                     newHead = head;
-//!                 }
-//!                 break;
-//!             }
-//! 
-//!             cnt = k;
-//! 
-//!             pre = null;
-//!             ListNode newEnd = curr;
-//!             // 用三个指正，翻转链表
-//!             while (curr != null && cnt-- > 0) {
-//!                 next = curr.next;
-//!                 curr.next = pre;
-//!                 pre = curr;
-//!                 curr = next;
-//!             }
-//! 
-//!             if (!bFirst) {
-//!                 // 将翻转后的k个节点的链表与上次尾节点连接
-//!                 pEnd.next = pre;
-//!             }
-//!             
-//!             // 记下翻转后的尾结点
-//!             pEnd = newEnd;
-//! 
-//!             if (bFirst){
-//!                 bFirst = false;
-//!                 newHead = pre;
-//!             }
-//!         }
-//! 
-//!         return newHead;
+//!       if(head == null) return null;
+//!       
+//!       ListNode a,b;
+//!       a = b = head;
+//!       for(int i = 0; i < k; i++) {
+//!           if (b == null) return head;
+//!           b = b.next;
+//!       }
+//!       
+//!       ListNode newHead = Reverse(a, b);
+//!       a.next = ReverseKGroup(b, k);
+//!       return newHead;
+//!     }
+//!       
+//!     // 反转[a, b) 区间链表，返回反转后头结点
+//!     public ListNode Reverse(ListNode a, ListNode b) {
+//!       ListNode pre, curr, next;
+//!       pre = null;curr = a;next = a;
+//!       while(curr != b) {
+//!           next = curr.next;
+//!           curr.next = pre;
+//!           pre = curr;
+//!           curr = next;
+//!       }
+//!       
+//!       // 反转后头结点
+//!       return pre;
 //!     }
 //! }
 //! ```
