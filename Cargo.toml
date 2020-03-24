@@ -14,5 +14,6 @@ members = [
     "valid-anagram",
     "reverse-nodes-in-k-group",
     "count-negative-numbers-in-a-sorted-matrix",
-    "lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof"
+    "lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof",
+    "add-digits"
 ]

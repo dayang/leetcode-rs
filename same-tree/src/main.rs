@@ -66,6 +66,7 @@ use std::cell::RefCell;
 pub struct Solution;
 
 impl Solution {
+    /// 递归即可
     pub fn is_same_tree(p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeNode>>>) -> bool {
         match (p, q) {
             (Some(v1), Some(v2)) => {
