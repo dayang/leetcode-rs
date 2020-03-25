@@ -37,6 +37,10 @@ name = "house-robber"
 version = "0.1.0"
 
 [[package]]
+name = "house-robber-ii"
+version = "0.1.0"
+
+[[package]]
 name = "how-many-numbers-are-smaller-than-the-current-number"
 version = "0.1.0"
 
