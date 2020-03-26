@@ -21,6 +21,10 @@ name = "count-negative-numbers-in-a-sorted-matrix"
 version = "0.1.0"
 
 [[package]]
+name = "counting-bits"
+version = "0.1.0"
+
+[[package]]
 name = "daily-temperatures"
 version = "0.1.0"
 
@@ -53,6 +57,10 @@ name = "longest-substring-without-repeating-characters"
 version = "0.1.0"
 
 [[package]]
+name = "matrix-block-sum"
+version = "0.1.0"
+
+[[package]]
 name = "maximum-subarray"
 version = "0.1.0"
 
@@ -78,6 +86,10 @@ version = "0.1.0"
 
 [[package]]
 name = "same-tree"
+version = "0.1.0"
+
+[[package]]
+name = "stone-game"
 version = "0.1.0"
 
 [[package]]

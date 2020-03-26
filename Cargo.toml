@@ -24,5 +24,8 @@ members = [
     "maximum-subarray",
     "is-subsequence",
     "min-cost-climbing-stairs",
-    "house-robber"
+    "house-robber",
+    "counting-bits",
+    "matrix-block-sum",
+    "stone-game"
 ]
