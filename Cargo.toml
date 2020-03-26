@@ -27,5 +27,6 @@ members = [
     "house-robber",
     "counting-bits",
     "matrix-block-sum",
-    "stone-game"
+    "stone-game",
+    "house-robber-ii"
 ]
