@@ -25,5 +25,8 @@ members = [
     "is-subsequence",
     "min-cost-climbing-stairs",
     "house-robber",
-    "house-robber-ii"
+    "house-robber-ii",
+    "longest-increasing-subsequence",
+    "longest-word-in-dictionary",
+    "replace-words"
 ]
