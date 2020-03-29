@@ -28,5 +28,9 @@ members = [
     "house-robber-ii",
     "longest-increasing-subsequence",
     "longest-word-in-dictionary",
-    "replace-words"
+    "replace-words",
+    "counting-bits",
+    "matrix-block-sum",
+    "stone-game",
+    "house-robber-ii"
 ]
