@@ -28,5 +28,7 @@ members = [
     "counting-bits",
     "matrix-block-sum",
     "stone-game",
-    "house-robber-ii"
+    "house-robber-ii",
+    "construct-binary-tree-from-preorder-and-inorder-traversal",
+    "sort-an-array"
 ]
