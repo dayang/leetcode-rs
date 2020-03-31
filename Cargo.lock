@@ -81,7 +81,15 @@ version = "0.2.68"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "longest-increasing-subsequence"
+version = "0.1.0"
+
+[[package]]
 name = "longest-substring-without-repeating-characters"
+version = "0.1.0"
+
+[[package]]
+name = "longest-word-in-dictionary"
 version = "0.1.0"
 
 [[package]]
@@ -144,6 +152,10 @@ dependencies = [
 
 [[package]]
 name = "recover-binary-search-tree"
+version = "0.1.0"
+
+[[package]]
+name = "replace-words"
 version = "0.1.0"
 
 [[package]]
