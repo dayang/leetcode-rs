@@ -14,7 +14,7 @@ impl Solution {
 
     /// 快速排序
     pub fn sort_array_quick_sort(mut nums: Vec<i32>) -> Vec<i32> {
-        Self::quick_sort(&mut nums[..]);
+        Self::quick_sort(&mut nums);
         nums
     }
 
@@ -82,28 +82,109 @@ impl Solution {
     }
 
     /// 希尔排序
-    pub fn sort_array_shell_sort(mut _nums: Vec<i32>) -> Vec<i32> {
-        vec![]
+    pub fn sort_array_shell_sort(mut nums: Vec<i32>) -> Vec<i32> {
+
+        nums
     }
 
     /// 插入排序
-    pub fn sort_array_insertion_sort(mut _nums: Vec<i32>) -> Vec<i32> {
-        vec![]
+    pub fn sort_array_insertion_sort(mut nums: Vec<i32>) -> Vec<i32> {
+        for i in 1..nums.len() {
+            let curr = nums[i];
+            for j in (0..i).rev() {
+                if nums[j] > curr {
+                    nums[j + 1] = nums[j];
+                    if j == 0 {
+                        nums[j] = curr;
+                    }
+                } else {
+                    nums[j + 1] = curr;
+                    break;
+                }
+            }
+        }
+        nums
     }
 
     /// 归并排序
-    pub fn sort_array_merge_sort(mut _nums: Vec<i32>) -> Vec<i32> {
-        vec![]
+    pub fn sort_array_merge_sort(nums: Vec<i32>) -> Vec<i32> {
+        Self::merge_sort(&nums)
+    }
+
+    fn merge_sort(nums: &[i32]) -> Vec<i32> {
+        if nums.len() <= 1 {
+            return nums.to_vec();
+        }
+
+        Self::merge(&Self::merge_sort(&nums[0..nums.len() / 2]), &Self::merge_sort(&nums[nums.len() / 2..]))
+    }
+
+    fn merge(left_seq: &[i32], right_seq: &[i32]) -> Vec<i32> {
+        let mut merged = vec![];
+        let mut i = 0;
+        let mut j = 0;
+        while i < left_seq.len() && j < right_seq.len() {
+            if left_seq[i] <= right_seq[j] {
+                merged.push(left_seq[i]);
+                i += 1;
+            } else {
+                merged.push(right_seq[j]);
+                j += 1;
+            }
+        }
+
+        while i < left_seq.len() {
+            merged.push(left_seq[i]);
+            i += 1;
+        }
+        
+        while j < right_seq.len() {
+            merged.push(right_seq[j]);
+            j += 1;
+        }
+
+        merged
     }
 
     /// 堆排序
-    pub fn sort_array_heap_sort(mut _nums: Vec<i32>) -> Vec<i32> {
-        vec![]
+    pub fn sort_array_heap_sort(mut nums: Vec<i32>) -> Vec<i32> {
+        // 从最后一个非叶子节点开始，从右到左，从下到上调整堆
+        let length = nums.len();
+        for i in (0..=nums.len() / 2 - 1).rev() {
+            Self::adjust_heap(&mut nums, i, length); 
+        }
+
+        for j in (1..nums.len()).rev() {
+            nums.swap(0, j);
+            Self::adjust_heap(&mut nums, 0, j);
+        }
+
+        nums
+    }
+
+    fn adjust_heap(nums: &mut [i32], mut index: usize, heap_size: usize) {
+        let adj_val = nums[index];
+        let mut k = index * 2 + 1;
+        while k < heap_size {
+            if k + 1 < heap_size && nums[k] < nums[k + 1] {
+                k = k + 1;
+            }
+
+            if nums[k] > adj_val {
+                nums.swap(k, index);
+                index = k;
+            }
+
+            k = 2 * k + 1;
+        }
+
+        nums[index] = adj_val;
     }
 }
 
 fn main() {
     println!("Hello, world!");
+    println!("{:?}", Solution::sort_array_heap_sort(vec![1,4,6,0,3,7,7,12]));
 }
 
 
@@ -116,6 +197,9 @@ mod test{
         assert_eq!(Solution::sort_array_bubble_sort(vec![1,4,6,0,3,7,12]), vec![0,1,3,4,6,7,12]);
         assert_eq!(Solution::sort_array_selection_sort(vec![1,4,6,0,3,7,12]), vec![0,1,3,4,6,7,12]);
         assert_eq!(Solution::sort_array_insertion_sort(vec![1,4,6,0,3,7,12]), vec![0,1,3,4,6,7,12]);
+        assert_eq!(Solution::sort_array_merge_sort(vec![1,4,6,0,3,7,12]), vec![0,1,3,4,6,7,12]);
+        assert_eq!(Solution::sort_array_heap_sort(vec![1,4,6,0,3,7,12]), vec![0,1,3,4,6,7,12]);
+        assert_eq!(Solution::sort_array_shell_sort(vec![1,4,6,0,3,7,12]), vec![0,1,3,4,6,7,12]);
     }
 }
 
