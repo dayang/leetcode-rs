@@ -34,5 +34,6 @@ members = [
     "stone-game",
     "house-robber-ii",
     "construct-binary-tree-from-preorder-and-inorder-traversal",
-    "sort-an-array"
+    "sort-an-array",
+    "game-of-life"
 ]

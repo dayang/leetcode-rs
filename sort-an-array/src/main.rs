@@ -83,8 +83,12 @@ impl Solution {
 
     /// 希尔排序
     pub fn sort_array_shell_sort(mut nums: Vec<i32>) -> Vec<i32> {
-
+        
         nums
+    }
+
+    fn insert_group() {
+
     }
 
     /// 插入排序
