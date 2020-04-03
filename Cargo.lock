@@ -30,6 +30,10 @@ name = "count-negative-numbers-in-a-sorted-matrix"
 version = "0.1.0"
 
 [[package]]
+name = "count-square-submatrices-with-all-ones"
+version = "0.1.0"
+
+[[package]]
 name = "counting-bits"
 version = "0.1.0"
 
@@ -69,6 +73,10 @@ version = "0.1.0"
 
 [[package]]
 name = "how-many-numbers-are-smaller-than-the-current-number"
+version = "0.1.0"
+
+[[package]]
+name = "increasing-subsequences"
 version = "0.1.0"
 
 [[package]]
@@ -186,6 +194,10 @@ name = "stone-game"
 version = "0.1.0"
 
 [[package]]
+name = "string-to-integer-atoi"
+version = "0.1.0"
+
+[[package]]
 name = "symmetric-tree"
 version = "0.1.0"
 
@@ -198,7 +210,15 @@ name = "unique-binary-search-trees"
 version = "0.1.0"
 
 [[package]]
+name = "utf-8-validation"
+version = "0.1.0"
+
+[[package]]
 name = "valid-anagram"
+version = "0.1.0"
+
+[[package]]
+name = "valid-number"
 version = "0.1.0"
 
 [[package]]

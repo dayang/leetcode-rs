@@ -35,5 +35,10 @@ members = [
     "house-robber-ii",
     "construct-binary-tree-from-preorder-and-inorder-traversal",
     "sort-an-array",
-    "game-of-life"
+    "game-of-life",
+    "count-square-submatrices-with-all-ones",
+    "string-to-integer-atoi",
+    "valid-number",
+    "utf-8-validation",
+    "increasing-subsequences"
 ]
