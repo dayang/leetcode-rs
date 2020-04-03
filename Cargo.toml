@@ -40,5 +40,7 @@ members = [
     "string-to-integer-atoi",
     "valid-number",
     "utf-8-validation",
-    "increasing-subsequences"
+    "increasing-subsequences",
+    "triangle",
+    "airplane-seat-assignment-probability"
 ]
