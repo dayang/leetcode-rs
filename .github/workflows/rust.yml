@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: GenDoc
-      run: cargo doc
+      run: cargo doc --no-deps
     - name: Transfer File
       env:
         DOC_DEPLOY_KEY: ${{ secrets.DOC_DEPLOY_KEY }}
