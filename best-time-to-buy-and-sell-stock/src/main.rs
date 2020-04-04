@@ -27,6 +27,7 @@ pub struct Solution;
 
 use std::cmp::{min, max};
 impl Solution {
+    /// 贪心
     /// 遍历一遍，记录最低价格，用当前价格减最低价格得到利润，取最大利润
     pub fn max_profit(prices: Vec<i32>) -> i32 {
         if prices.len() <= 1 {
@@ -40,6 +41,41 @@ impl Solution {
         }
 
         profit
+    }
+
+    /// 动态规划
+    pub fn max_profit_v2(prices: Vec<i32>) -> i32 {
+        if prices.len() == 0 {
+            return 0;
+        }
+        let mut dp = vec![vec![0;2]; prices.len()];
+        for i in 0..prices.len() {
+            if i == 0 {
+                dp[i][1] = -prices[0];
+                dp[i][0] = 0;
+                continue;
+            }
+
+            dp[i][0] = max(dp[i-1][0], dp[i-1][1] + prices[i]);
+            dp[i][1] = max(dp[i-1][1], -prices[i]);
+        }
+
+        dp[prices.len()-1][0]
+    }
+
+    /// 动态规划简化
+    pub fn max_profit_v3(prices: Vec<i32>) -> i32 {
+        if prices.len() == 0 {
+            return 0;
+        }
+        let mut dp_0 = 0;
+        let mut dp_1 = -prices[0];
+        for i in 1..prices.len() {
+            dp_0 = max(dp_0, dp_1 + prices[i]);
+            dp_1 = max(dp_1, -prices[i]);
+        }
+
+        dp_0
     }
 }
 
