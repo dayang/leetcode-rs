@@ -29,7 +29,7 @@ impl Solution {
     pub fn dfs(nums: &Vec<i32>, offset: usize, seq: &mut Vec<i32>, res: &mut Vec<Vec<i32>>) {
         let mut set = HashSet::new();
         for i in offset..nums.len() {
-            if ((seq.len() == 0 || nums[i] >= *seq.last().unwrap()) && set.insert(nums[i])) {
+            if (seq.len() == 0 || nums[i] >= *seq.last().unwrap()) && set.insert(nums[i]) {
                 seq.push(nums[i]);
                 if seq.len() >= 2 {
                     res.push(seq.clone());

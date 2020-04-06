@@ -24,12 +24,60 @@ pub struct Solution;
 use std::cmp::max;
 impl Solution {
     pub fn max_profit(k: i32, prices: Vec<i32>) -> i32 {
-        
+        if prices.len() == 0 {
+            return 0;
+        }
+        let k = k as usize;
+        // 相当于没有次数限制
+        if k > prices.len() / 2 {
+            let mut ans = 0;
+            for i in 1..prices.len() {
+                if prices[i] > prices[i-1] {
+                    ans += prices[i] - prices[i-1];
+                }
+            }
+            
+            ans
+        } else {
+            let mut asset = vec![vec![vec![0;2];k + 1];prices.len()];
+            for i in 0..prices.len() {
+                for j in (1..=k).rev() {
+                    if i == 0 {
+                        asset[i][0][0] = 0;
+                        asset[i][k][0] = 0;
+                        for i in 0..prices.len() {
+                            asset[i][0][1] = -prices[0];
+                        }
 
-        asset_0
+                        for x in 0..=k {
+                            asset[i][x][1] = -prices[0];
+                        }
+                        
+                        
+                        continue;
+                    }
+
+                    asset[i][j][0] = max(asset[i - 1][j][0], asset[i-1][j][1] + prices[i]);
+                    asset[i][j][1] = max(asset[i-1][j][1], asset[i-1][j-1][0] - prices[i]);
+                }
+            }
+
+            asset[prices.len() - 1][k][0]
+        }
     }
 }
 
 fn main() {
     println!("Hello, world!");
+}
+
+#[cfg(test)]
+mod test{
+    use super::*;
+    #[test]
+    fn test_max_profit() {
+        assert_eq!(Solution::max_profit(2, vec![2,4,1]), 2);
+        assert_eq!(Solution::max_profit(2, vec![3,2,6,5,0,3]), 7);
+        assert_eq!(Solution::max_profit(2, vec![1,2,4,2,5,7,2,4,9,0]), 13);
+    }
 }
