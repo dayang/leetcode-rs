@@ -50,5 +50,7 @@ members = [
     "best-time-to-buy-and-sell-stock-iv",
     "best-time-to-buy-and-sell-stock-with-cooldown",
     "unique-binary-search-trees-ii",
-    "minimum-ascii-delete-sum-for-two-strings"
+    "minimum-ascii-delete-sum-for-two-strings",
+    "rotate-matrix-lcci",
+    "longest-common-subsequence"
 ]

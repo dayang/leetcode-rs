@@ -28,22 +28,24 @@
 //! 小数点 - "."
 //! 当然，在输入中，这些字符的上下文也很重要。
 //! 
-
+//! 
+//! ### 解法思路：###
 //! 使用有限状态机DFA，状态转换表格如下
 //! 
 //! .3 或3. 也认为是正确的数字
-//! ```
-//! state/input    e        +/-	       digit(0..9)  dot(.)     other
-//! start         end       signed 	   number       dot        end
-//! signed        end       end	       number       dot        end
-//! dot           end       end        float        end        end
-//! number	      e         end	       number       float_dot  end
-//! float         e         end        float        end        end
-//! e             end       e_signed   e_number     end        end
-//! e_signed      end       end        e_number     end        end
-//! e_number      end       end        e_number     end        end
-//! end	          end       end	       end	        end        end
-//! ```
+//! 
+//! |state/input  |  e   |     +/-	  |     digit(0..9) | dot(.)   |  other|
+//! |--|--|--|--|--|--|
+//! |start      |   end     |  signed 	|   number    |  dot       | end|
+//! |signed     |   end     |  end	    |   number    |  dot       | end|
+//! |dot        |   end     |  end      |  float      |  end       | end|
+//! |number	    |   e       | end	    |   number    |  float_dot | end|
+//! |float      |   e       |  end      |  float      |  end       | end|
+//! |e          |   end     |  e_signed |  e_number   |  end       | end|
+//! |e_signed   |   end     |  end      |  e_number   |  end       | end|
+//! |e_number   |   end     |  end      |  e_number   |  end       | end|
+//! |end	    |   end     |  end	    |    end	  |  end       | end|
+//! 
 //! 先去掉首尾空格，减少两个状态，最终状态为number/e_number/float/float_dot时是有效数字,end时提前结束
 
 pub struct Solution;

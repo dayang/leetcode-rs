@@ -48,13 +48,14 @@
 //! 
 
 //! 使用有限状态机DFA，状态转换表格如下
-//! ```
-//! state/input  ' '	 +/-	  number	other
-//! start	    start	signed	in_number	end
-//! signed	    end	    end	    in_number	end
-//! in_number	end	    end	    in_number	end
-//! end	        end	    end	    end	        end
-//! ```
+//! 
+//! |state/input|  ' ' |	 +/- |	 number  | other|
+//! |--|--|--|--|--|
+//! |start	   | start |	signed|	in_number|	end|
+//! |signed	   | end   |    end   |	in_number|	end|
+//! |in_number | end   |    end   | in_number|	end|
+//! |end	   | end   |    end   |	    end	 |  end|
+//! 
 
 
 pub struct Solution;

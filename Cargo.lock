@@ -117,6 +117,10 @@ version = "0.2.68"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "longest-common-subsequence"
+version = "0.1.0"
+
+[[package]]
 name = "longest-increasing-subsequence"
 version = "0.1.0"
 
@@ -204,6 +208,10 @@ version = "0.1.0"
 
 [[package]]
 name = "reverse-nodes-in-k-group"
+version = "0.1.0"
+
+[[package]]
+name = "rotate-matrix-lcci"
 version = "0.1.0"
 
 [[package]]
