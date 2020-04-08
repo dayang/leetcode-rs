@@ -20,18 +20,87 @@
 //! * 1 <= text2.length <= 1000
 //! * 输入的字符串只含有小写英文字符。
 //! 
-
+use std::collections::HashMap;
 pub struct Solution;
 
 impl Solution {
     pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
+        let m = text1.len();
+        let n = text2.len();
+        let s1 = text1.as_bytes();
+        let s2 = text2.as_bytes();
+        let mut dp = vec![vec![0;n + 1];m + 1];
+        for i in 1..=m{
+            for j in 1..=n{
+                if s1[i-1] == s2[j-1]{
+                    dp[i][j] = dp[i-1][j-1] + 1;
+                } else {
+                    dp[i][j] = std::cmp::max(dp[i][j-1], dp[i-1][j]);
+                }
+            }
+        }
         
-        0
+        dp[m][n]
+    }
+
+    /// dp可以优化，二维dp数组，每次生成下一行数据只需要上一行的值，可以优化成一维数组
+    pub fn longest_common_subsequence_v2(text1: String, text2: String) -> i32 {
+        let m = text1.len();
+        let n = text2.len();
+        let s1 = text1.as_bytes();
+        let s2 = text2.as_bytes();
+        let mut dp = vec![0;n + 1];
+        // 相当于dp[i-1][j]
+        let mut temp;
+        for i in 1..=m{
+            // 相当于dp[i-1][j-1]
+            let mut last = 0;
+            for j in 1..=n{
+                // dp[j]相当于dp[i][j]
+                temp = dp[j];
+                if s1[i-1] == s2[j-1] {
+                    dp[j] = last + 1;
+                } else {
+                    dp [j] = std::cmp::max(temp, dp[j-1]);
+                }
+                last = temp;
+            }
+        }
+        
+        dp[n]
+    }
+
+    /// 动态规划，自顶向下
+    pub fn longest_common_subsequence_v3(text1: String, text2: String) -> i32 {
+        let mut memorized = HashMap::new();
+
+        Self::longest_common_subsequence_recurse(text1.as_bytes(), text2.as_bytes(), &mut memorized)
+    }
+
+    fn longest_common_subsequence_recurse(s1: &[u8], s2: &[u8], memorized: &mut HashMap<(usize, usize), i32>) -> i32 {
+        if s1.len() == 0 || s2.len() == 0 {
+            return 0;
+        }
+
+        if let Some(len) = memorized.get(&(s1.len(), s2.len())) {
+            return *len;
+        }
+
+        let res;
+        if s1[s1.len() - 1] == s2[s2.len() - 1] {
+            res = Self::longest_common_subsequence_recurse(&s1[0..s1.len() - 1], &s2[0..s2.len() - 1], memorized) + 1
+        } else {
+            res = std::cmp::max(Self::longest_common_subsequence_recurse(&s1[0..s1.len() - 1], s2, memorized),
+                            Self::longest_common_subsequence_recurse(s1, &s2[0..s2.len() - 1], memorized))
+        }
+
+        memorized.insert((s1.len(), s2.len()), res);
+        return res;
     }
 }
 
 fn main() {
-    println!("Hello, world!");
+    println!("{}", Solution::longest_common_subsequence("abcde".to_string(), "ace".to_string()));
 }
 
 #[cfg(test)]
@@ -42,5 +111,9 @@ mod test{
         assert_eq!(Solution::longest_common_subsequence("abcde".to_string(), "ace".to_string()), 3);
         assert_eq!(Solution::longest_common_subsequence("abc".to_string(), "def".to_string()), 0);
         assert_eq!(Solution::longest_common_subsequence("asdgsdfay".to_string(), "sddfzzzy".to_string()), 5);
+
+        assert_eq!(Solution::longest_common_subsequence_v3("abcde".to_string(), "ace".to_string()), 3);
+        assert_eq!(Solution::longest_common_subsequence_v3("abc".to_string(), "def".to_string()), 0);
+        assert_eq!(Solution::longest_common_subsequence_v3("asdgsdfay".to_string(), "sddfzzzy".to_string()), 5);
     }
 }

@@ -27,13 +27,44 @@
 
 pub struct Solution;
 
+use std::cmp::min;
 impl Solution {
     pub fn minimum_delete_sum(s1: String, s2: String) -> i32 {
-        
-        0
+        let mut dp = vec![vec![0; s2.len() + 1]; s1.len() + 1];
+        let s1 = s1.as_bytes();
+        let s2 = s2.as_bytes();
+        for i in 1..=s1.len(){
+            dp[i][0] = dp[i-1][0] + s1[i-1] as i32;
+        }
+
+        for i in 1..=s2.len(){
+            dp[0][i] = dp[0][i-1] + s2[i-1] as i32;
+        }
+
+        for i in 1..=s1.len() {
+            for j in 1..=s2.len() {
+                if s1[i-1] == s2[j-1] {
+                    dp[i][j] = dp[i-1][j-1];
+                } else {
+                    dp[i][j] = min(dp[i-1][j] + s1[i-1] as i32, dp[i][j-1] + s2[j-1] as i32);
+                }
+            }
+        }
+
+        dp[s1.len()][s2.len()]
     }
 }
 
 fn main() {
     println!("Hello, world!");
+}
+
+#[cfg(test)]
+mod test{
+    use super::*;
+    #[test]
+    fn test_minimum_delete_sum() {
+        assert_eq!(Solution::minimum_delete_sum("sea".to_string(), "eat".to_string()), 231);
+        assert_eq!(Solution::minimum_delete_sum("delete".to_string(), "leet".to_string()), 403);
+    }
 }

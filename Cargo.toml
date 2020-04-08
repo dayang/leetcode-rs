@@ -52,5 +52,11 @@ members = [
     "unique-binary-search-trees-ii",
     "minimum-ascii-delete-sum-for-two-strings",
     "rotate-matrix-lcci",
-    "longest-common-subsequence"
+    "longest-common-subsequence",
+    "delete-operation-for-two-strings",
+    "uncrossed-lines",
+    "edit-distance",
+    "ji-qi-ren-de-yun-dong-fan-wei-lcof",
+    "longest-valid-parentheses",
+    "palindromic-substrings"
 ]
