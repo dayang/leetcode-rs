@@ -58,5 +58,13 @@ members = [
     "edit-distance",
     "ji-qi-ren-de-yun-dong-fan-wei-lcof",
     "longest-valid-parentheses",
-    "palindromic-substrings"
+    "palindromic-substrings",
+    "generate-parentheses",
+    "minimum-falling-path-sum",
+    "minimum-cost-tree-from-leaf-values",
+    "largest-rectangle-in-histogram",
+    "next-greater-element-i",
+    "next-greater-element-ii",
+    "online-stock-span",
+    "baseball-game"
 ]
