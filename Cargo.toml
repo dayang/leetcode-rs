@@ -66,5 +66,7 @@ members = [
     "next-greater-element-i",
     "next-greater-element-ii",
     "online-stock-span",
-    "baseball-game"
+    "baseball-game",
+    "reverse-words-in-a-string",
+    "binary-search-tree-iterator"
 ]

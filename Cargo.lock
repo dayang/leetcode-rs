@@ -41,6 +41,10 @@ name = "best-time-to-buy-and-sell-stock-with-transaction-fee"
 version = "0.1.0"
 
 [[package]]
+name = "binary-search-tree-iterator"
+version = "0.1.0"
+
+[[package]]
 name = "binary-tree-inorder-traversal"
 version = "0.1.0"
 
@@ -260,6 +264,10 @@ version = "0.1.0"
 
 [[package]]
 name = "reverse-nodes-in-k-group"
+version = "0.1.0"
+
+[[package]]
+name = "reverse-words-in-a-string"
 version = "0.1.0"
 
 [[package]]
